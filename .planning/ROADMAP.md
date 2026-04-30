@@ -5,7 +5,7 @@ Building the MVP for Rongsok.in, focusing on robust authentication, geolocation-
 
 ## Phases
 
-- [ ] **Phase 1: Foundation & Auth** - DB setup, user registration, role selection, and authentication.
+- [x] **Phase 1: Foundation & Auth** - DB setup, user registration, role selection, and authentication.
 - [ ] **Phase 2: Collector Setup & Search** - PostGIS integration, collector catalogs, and proximity-based search.
 - [ ] **Phase 3: Order Management System (OMS)** - Socket.IO real-time orders, state machine execution, and photo uploads.
 - [ ] **Phase 4: Validation & Ratings** - Digital receipts, mutual ratings, and transaction history.
@@ -23,9 +23,9 @@ Building the MVP for Rongsok.in, focusing on robust authentication, geolocation-
 **Plans**: TBD
 
 Plans:
-- [ ] 01-01: Backend setup (Express, Prisma schema, PostgreSQL init)
-- [ ] 01-02: User Authentication API (JWT, Bcrypt)
-- [ ] 01-03: Frontend Auth UI and Profile Setup Forms
+- [x] 01-01: Backend setup (Express, Prisma schema, PostgreSQL init)
+- [x] 01-02: User Authentication API (JWT, Bcrypt)
+- [x] 01-03: Frontend Auth UI and Profile Setup Forms
 
 ### Phase 2: Collector Setup & Search
 **Goal**: Enable collectors to manage their catalogs and customers to find nearby collectors.
@@ -80,7 +80,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & Auth | 0/3 | Not started | - |
+| 1. Foundation & Auth | 3/3 | Completed | Yes |
 | 2. Collector Setup & Search | 0/3 | Not started | - |
 | 3. Order Management System | 0/4 | Not started | - |
 | 4. Validation & Ratings | 0/3 | Not started | - |
