@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import {
-  Bell, User, Star, MapPin, CheckCircle, RefreshCw,
-  Package, Zap, ChevronRight, Award, Archive, Cpu, Coffee,
-  History, Home, BookOpen, ArrowRight, ShieldCheck, Clock, Leaf, Filter, Truck, Search
+  User, Star, MapPin, CheckCircle, RefreshCw,
+  Zap, ChevronRight, Award, Archive,
+  History, Home, ArrowRight, Clock, Leaf, Filter, Truck, Search
 } from "lucide-react";
 import Link from "next/link";
 
@@ -115,35 +115,7 @@ function CollectorCard({ c }: { c: (typeof COLLECTORS)[0] }) {
   );
 }
 
-// ─── SIDEBAR (DESKTOP) ───────────────────────────────────────────────────────
 
-function Sidebar() {
-  return (
-    <aside className="hidden lg:flex flex-col gap-5 w-72 shrink-0">
-      {/* How It Works */}
-      <div className="bg-white rounded-3xl border border-sky-50 shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-6">
-        <h3 className="font-bold text-gray-800 text-sm mb-5 flex items-center gap-2">
-          <ShieldCheck className="text-sky-500" size={18} /> Cara Kerja
-        </h3>
-        <div className="space-y-5 relative before:absolute before:inset-0 before:ml-3.5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-sky-100">
-          {[
-            { n: "1", title: "Temukan Pengepul", desc: "Cari terdekat dari kos" },
-            { n: "2", title: "Pilih & Jual", desc: "Minta pickup sekarang" },
-            { n: "3", title: "Timbang & Bayar", desc: "Dapat cash di tempat" },
-          ].map((s, i) => (
-            <div key={s.n} className="relative flex items-start gap-4">
-              <div className="w-7 h-7 bg-white border-2 border-sky-500 text-sky-600 rounded-full flex items-center justify-center text-xs font-bold shrink-0 shadow-sm z-10">{s.n}</div>
-              <div className="pt-1">
-                <p className="text-sm font-bold text-gray-700">{s.title}</p>
-                <p className="text-xs text-gray-500 mt-0.5">{s.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </aside>
-  );
-}
 
 // ─── MAIN PAGE ───────────────────────────────────────────────────────────────
 
@@ -169,10 +141,8 @@ export default function HomePage() {
       </header>
 
       {/* ── MAIN CONTENT ─────────────────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 lg:py-8 flex gap-8">
-        <Sidebar />
-
-        <div className="flex-1 min-w-0 space-y-8 pb-32 lg:pb-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 lg:py-8">
+        <div className="space-y-8 pb-32 lg:pb-8">
           {/* CTA BANNER */}
         <div className="bg-sky-500 rounded-3xl p-6 md:p-8 flex items-center justify-between text-white shadow-lg shadow-sky-200/50 overflow-hidden relative group">
           <div className="relative z-10 max-w-sm">
