@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
   title: "Rongsok.in — Platform Daur Ulang Digital Yogyakarta",
@@ -16,7 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" className="h-full">
-      <body className="min-h-full">{children}</body>
+      <body className="min-h-full">
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
