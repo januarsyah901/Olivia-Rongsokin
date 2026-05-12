@@ -81,6 +81,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation & Auth | 3/3 | Completed | Yes |
-| 2. Collector Setup & Search | 0/3 | Not started | - |
+| 2. Collector Setup & Search | 1/3 | In progress | - |
 | 3. Order Management System | 0/4 | Not started | - |
 | 4. Validation & Ratings | 0/3 | Not started | - |

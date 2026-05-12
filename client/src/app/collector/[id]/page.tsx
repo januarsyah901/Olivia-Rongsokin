@@ -1,7 +1,7 @@
 "use client";
 
-import { 
-  Star, MapPin, Zap, ChevronLeft, Phone, MessageSquare, 
+import {
+  Star, MapPin, Zap, ChevronLeft, Phone, MessageSquare,
   Clock, ShieldCheck, Info, Package, ArrowRight, Share2, Heart
 } from "lucide-react";
 import Link from "next/link";
@@ -18,7 +18,7 @@ const COLLECTORS = [
       { name: "Plastik", price: "Rp 4.000/kg", icon: "♻️" },
       { name: "Kertas", price: "Rp 1.500/kg", icon: "📄" },
       { name: "Besi", price: "Rp 6.000/kg", icon: "🏗️" }
-    ], 
+    ],
     eta: "15–30 menit", avatar: "B", color: "bg-sky-500",
     address: "Jl. Kaliurang KM 5, Sleman, Yogyakarta",
     description: "Spesialis kardus dan plastik. Melayani penjemputan area kos-kosan dengan timbangan digital akurat. Kami juga menerima barang elektronik bekas dan logam lainnya dengan harga kompetitif.",
@@ -31,7 +31,7 @@ const COLLECTORS = [
       { name: "Besi/Logam", price: "Rp 5.500/kg", icon: "🏗️" },
       { name: "Plastik", price: "Rp 3.500/kg", icon: "♻️" },
       { name: "Elektronik", price: "Rp 12.000/kg", icon: "💻" }
-    ], 
+    ],
     eta: "30–45 menit", avatar: "S", color: "bg-emerald-500",
     address: "Jl. Gejayan No. 12, Yogyakarta",
     description: "Menerima segala jenis logam dan barang elektronik. Jemputan cepat untuk area Depok dan sekitarnya.",
@@ -43,15 +43,15 @@ export default function CollectorDetail() {
   const params = useParams();
   const router = useRouter();
   const [isLiked, setIsLiked] = useState(false);
-  
+
   const collector = COLLECTORS.find(c => c.id === Number(params.id)) || COLLECTORS[0];
 
   return (
     <main className="min-h-screen bg-white pb-24 pt-20 lg:pt-32">
       {/* Floating Back Button (Mobile) */}
       <div className="fixed top-24 left-4 z-40 lg:hidden">
-        <button 
-          onClick={() => router.back()} 
+        <button
+          onClick={() => router.back()}
           className="w-12 h-12 bg-white/90 backdrop-blur-md rounded-2xl flex items-center justify-center shadow-xl border border-gray-100 text-gray-800 active:scale-95 transition-all"
         >
           <ChevronLeft size={24} />
@@ -60,44 +60,44 @@ export default function CollectorDetail() {
 
       <div className="max-w-6xl mx-auto lg:pt-32 px-0 lg:px-6">
         <div className="flex flex-col lg:flex-row gap-10">
-          
+
           {/* Left Column: Image & Info */}
           <div className="flex-1">
             <div className="relative h-[350px] lg:h-[500px] w-full lg:rounded-[2.5rem] overflow-hidden shadow-2xl group">
-              <img 
-                src={collector.image} 
+              <img
+                src={collector.image}
                 alt={collector.lapakName}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               {/* Desktop Back Button */}
               <div className="absolute top-6 left-6 hidden lg:block">
-                <button 
-                  onClick={() => router.back()} 
+                <button
+                  onClick={() => router.back()}
                   className="bg-white hover:bg-gray-50 p-3 rounded-2xl shadow-xl transition-all active:scale-95"
                 >
                   <ChevronLeft size={24} className="text-gray-800" />
                 </button>
               </div>
-              
+
               {/* Overlay Content */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
               <div className="absolute bottom-8 left-8 right-8">
-                 <div className="flex items-center gap-2 mb-4">
-                   <div className="bg-sky-500 text-white text-[10px] font-bold px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1">
-                     <Zap size={12} /> TERVERIFIKASI
-                   </div>
-                   {collector.isPremium && (
-                     <div className="bg-amber-500 text-white text-[10px] font-bold px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1">
-                       <Star size={12} fill="white" /> PREMIUM
-                     </div>
-                   )}
-                 </div>
-                 <h1 className="text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
-                   {collector.lapakName}
-                 </h1>
-                 <p className="text-white/80 text-lg mt-2 flex items-center gap-2">
-                   <MapPin size={18} className="text-sky-400" /> {collector.address}
-                 </p>
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="bg-sky-500 text-white text-[10px] font-bold px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1">
+                    <Zap size={12} /> TERVERIFIKASI
+                  </div>
+                  {collector.isPremium && (
+                    <div className="bg-amber-500 text-white text-[10px] font-bold px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1">
+                      <Star size={12} fill="white" /> PREMIUM
+                    </div>
+                  )}
+                </div>
+                <h1 className="text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+                  {collector.lapakName}
+                </h1>
+                <p className="text-white/80 text-lg mt-2 flex items-center gap-2">
+                  <MapPin size={18} className="text-sky-400" /> {collector.address}
+                </p>
               </div>
             </div>
 
@@ -172,7 +172,7 @@ export default function CollectorDetail() {
               <h3 className="text-xl font-bold text-gray-800 mb-8 flex items-center gap-3">
                 <Package size={24} className="text-sky-500" /> Daftar Harga Hari Ini
               </h3>
-              
+
               <div className="space-y-4 mb-10">
                 {collector.categories.map((cat, i) => (
                   <div key={i} className="flex items-center justify-between p-5 rounded-3xl bg-gray-50 border border-gray-100 hover:border-sky-500/30 hover:bg-sky-50/30 transition-all cursor-default group/item">

@@ -5,6 +5,8 @@ import { useRouter } from 'next/navigation';
 import { Lock, Mail } from 'lucide-react';
 import Link from 'next/link';
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api/v1';
+
 export default function Login() {
   const router = useRouter();
   const [formData, setFormData] = useState({
@@ -20,7 +22,7 @@ export default function Login() {
     setError('');
 
     try {
-      const res = await fetch('http://localhost:3001/api/auth/login', {
+      const res = await fetch(`${API_URL}/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),

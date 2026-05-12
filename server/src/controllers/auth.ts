@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient, Role } from '@prisma/client';
 
 const prisma = new PrismaClient();
 const JWT_SECRET = process.env.JWT_SECRET || 'supersecretkey_for_rongsokin_dev';
@@ -30,7 +30,7 @@ export const register = async (req: Request, res: Response): Promise<void> => {
         name,
         email,
         passwordHash,
-        role,
+        role: role as Role,
       },
     });
 
